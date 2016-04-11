@@ -4,7 +4,6 @@
   <artifactId>MyTools</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
-  <name>spark</name>
   <build>
     <sourceDirectory>src</sourceDirectory>
     <plugins>
@@ -26,4 +25,22 @@
       </plugin>
     </plugins>
   </build>
+  <dependencies>
+  	<dependency>
+  		<groupId>mysql</groupId>
+  		<artifactId>mysql-connector-java</artifactId>
+  		<version>5.1.35</version>
+  	</dependency>
+	<dependency>
+		<groupId>org.apache.commons</groupId>
+		<artifactId>commons-lang3</artifactId>
+		<version>3.4</version>
+	</dependency>
+  	<dependency>
+	<groupId>com.belerweb</groupId>
+	<artifactId>pinyin4j</artifactId>
+	<version>2.5.0</version>
+	</dependency>
+  	
+  </dependencies>
 </project>
