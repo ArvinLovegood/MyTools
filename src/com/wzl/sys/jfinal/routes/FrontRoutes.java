@@ -8,9 +8,7 @@ public class FrontRoutes extends Routes {
 
 	@Override
 	public void config() {
-		System.out.println(PropKit.get("view_front"));
-
-		add(PropKit.get("view_front"), FrontController.class);
+		add(PropKit.get("view_front"), FrontController.class,PropKit.get("view_base")+PropKit.get("view_front"));
 
 	}
 

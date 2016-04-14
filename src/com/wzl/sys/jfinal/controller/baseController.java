@@ -4,10 +4,7 @@ import com.jfinal.core.Controller;
 
 public class baseController extends Controller{
 	
-	public void index(){
-		renderJsp("login.jsp");
-	}
-	
+
 	public void login(){
 		renderJsp("login.jsp");
 	}

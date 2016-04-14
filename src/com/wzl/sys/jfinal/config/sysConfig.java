@@ -64,7 +64,7 @@ public class sysConfig extends JFinalConfig {
 		
 		me.setDevMode(PropKit.getBoolean("DevMode"));
 		me.setViewType(ViewType.JSP);
-
+		me.setError404View("404.jsp");
 	}
 
 	/* jfinal路由配置
@@ -124,7 +124,7 @@ public class sysConfig extends JFinalConfig {
 	
 	public void configHandler(Handlers me) {
 		
-		//静态资源拦截
+		//非静态资源拦截,不允许直接访问view文件夹下的文件
 		me.add(new staticHandler());
 		
 

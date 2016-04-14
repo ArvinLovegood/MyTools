@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.jfinal.handler.Handler;
+import com.jfinal.kit.PropKit;
 
 public class staticHandler extends Handler {
 
@@ -14,7 +15,8 @@ public class staticHandler extends Handler {
 	public void handle(String handle, HttpServletRequest request, HttpServletResponse Response, boolean[] arg3) {
 		// TODO Auto-generated method stub
 		
-		if(handle.endsWith(".jsp")||handle.endsWith(".html")||handle.endsWith(".htm")){
+		System.out.println(handle);
+		if(handle.startsWith(PropKit.get("view_base"))){
 			try {
 				Response.setContentType("text/html; charset=utf-8"); 
 				Response.setCharacterEncoding("utf-8");
@@ -25,9 +27,11 @@ public class staticHandler extends Handler {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		}else{			
+			return;
+		}	
+			
 			nextHandler.handle(handle, request, Response, arg3);
-		}
+		
 		
 	}
 

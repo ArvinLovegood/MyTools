@@ -9,7 +9,7 @@ public class AdminRoutes extends Routes {
 
 	@Override
 	public void config() {
-		add(PropKit.get("view_admin"), AdminController.class);
+		add(PropKit.get("view_admin"), AdminController.class,PropKit.get("view_base")+PropKit.get("view_admin"));
 	}
 
 }

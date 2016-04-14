@@ -9,7 +9,7 @@ public class AppRoutes extends Routes {
 
 	@Override
 	public void config() {
-		add(PropKit.get("view_mobile"), AppController.class);
+		add(PropKit.get("view_mobile"), AppController.class,PropKit.get("view_base")+PropKit.get("view_mobile"));
 
 	}
 
