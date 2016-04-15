@@ -110,11 +110,6 @@ public class sysConfig extends JFinalConfig {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}*/
-			 
-
-				
-				
-
 	}
 
 	/* jfinal全局拦截器，此拦截器将拦截所有jfinal处理的请求路由
