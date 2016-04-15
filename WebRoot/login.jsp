@@ -7,33 +7,66 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <!DOCTYPE html >
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<!--/*请填写静态包含的文件路径 */-->
-
-<title>Spark-下午3:53:21</title>
+<jsp:include page="view/head.jsp"></jsp:include>
 <style type="text/css">
-/*页面CSS样式  */
+body {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #eee;
+}
 
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
 
 </style>
-<!--/*请填写引用的样式文件路径 */-->
-<link rel="stylesheet" type="text/css" href="<%=path%>/xxx/common.css">
-<!--/*请填写引用的脚本文件路径 */-->
-<script type="text/javascript" src="<%=path%>/plugins/easyui/jquery.min.js"></script>
 </head>
 <body>
-<form action="<%=path%>/doLogin">
-<label>用户名：</label><input name="name"><br>
-<label>密码：</label><input name="pwd"><br>
-<button type="submit">登录</button>
-</form>
-<script type="text/javascript">
-/*初始化脚本  */
-$(function(){
-	
-	
-	
-});
-</script>
+    <div class="container">
+      <form class="form-signin" action="<%=path%>/doLogin">
+        <h2 class="form-signin-heading">用户登录</h2>
+        <label for="inputEmail" class="sr-only">邮箱</label>
+        <input type="email" id="inputEmail" class="form-control" placeholder="邮箱" required autofocus>
+        <label for="inputPassword" class="sr-only">密码</label>
+        <input type="password" id="inputPassword" class="form-control" placeholder="密码" required>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" value="remember-me"> 记住登录
+          </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
+      </form>
+    </div>
 </body>
 </html>

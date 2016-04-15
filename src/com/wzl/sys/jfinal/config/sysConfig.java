@@ -19,6 +19,11 @@ import com.jfinal.config.Plugins;
 import com.jfinal.config.Routes;
 import com.jfinal.ext.handler.UrlSkipHandler;
 import com.jfinal.kit.PropKit;
+import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
+import com.jfinal.plugin.activerecord.Db;
+import com.jfinal.plugin.activerecord.Record;
+import com.jfinal.plugin.druid.DruidPlugin;
+import com.jfinal.plugin.ehcache.EhCachePlugin;
 import com.jfinal.render.ViewType;
 import com.wzl.sys.jfinal.controller.baseController;
 import com.wzl.sys.jfinal.handler.staticHandler;
@@ -39,10 +44,8 @@ public class sysConfig extends JFinalConfig {
 	 */
 	
 	public void afterJFinalStart() {
-		// TODO Auto-generated method stub
 		super.afterJFinalStart();
 		System.out.println("------my-------jinal启动成功！---------------");
-//		System.out.println("-----------------缓存位置-----------"+CacheKit.getCacheManager().getDiskStorePath());
 	}
 	
 	/* 
@@ -50,7 +53,6 @@ public class sysConfig extends JFinalConfig {
 	 */
 	
 	public void beforeJFinalStop() {
-		// TODO Auto-generated method stub
 		super.beforeJFinalStop();
 	}
 
@@ -90,9 +92,16 @@ public class sysConfig extends JFinalConfig {
 	 */
 	
 	public void configPlugin(Plugins me) {
+		String dbType=PropKit.get("db.type"); 
+		String url=PropKit.get(dbType+".jdbcUrl");
+		String username=PropKit.get(dbType+".userName");
+		String password=PropKit.get(dbType+".passWord");
+		DruidPlugin druidPlugin = new DruidPlugin(url, username, password);
+		ActiveRecordPlugin arp= new ActiveRecordPlugin("mainDb", druidPlugin);
+		me.add(druidPlugin);
+		me.add(arp);	
 
-				
-	//	me.add(new  EhCachePlugin());//ehcache缓存插件  具体配置见 ehcache.xml
+		me.add(new  EhCachePlugin());//ehcache缓存插件  具体配置见 ehcache.xml
 				
 /*				try {
 					//利用redis数据库，统计jfinal每个action的请求次数，IP,User-Agent次数
