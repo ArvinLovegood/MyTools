@@ -9,104 +9,66 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <head>
 <title>Spark-下午2:30:29</title>
 <jsp:include page="../head.jsp"></jsp:include>
+<style type="text/css">
+body {
+  min-height: 2000px;
+  padding-top: 70px;
+}
+</style>
 </head>
 <body>
-<div class="container-fluid">
-	<div class="row-fluid">
-		<div class="span12">
-			<ul class="nav nav-tabs">
-				<li class="active">
-					<a href="#">首页</a>
-				</li>
-				<li>
-					<a href="#">资料</a>
-				</li>
-				<li class="disabled">
-					<a href="#">信息</a>
-				</li>
-				<li class="dropdown pull-right">
-					 <a href="#" data-toggle="dropdown" class="dropdown-toggle">下拉<strong class="caret"></strong></a>
-					<ul class="dropdown-menu">
-						<li>
-							<a href="#">操作</a>
-						</li>
-						<li>
-							<a href="#">设置栏目</a>
-						</li>
-						<li>
-							<a href="#">更多设置</a>
-						</li>
-						<li class="divider">
-						</li>
-						<li>
-							<a href="#">分割线</a>
-						</li>
-					</ul>
-				</li>
-			</ul>
-			<div class="hero-unit">
-				<h1>
-					Hello, world!
-				</h1>
-				<p>
-					这是一个可视化布局模板, 你可以点击模板里的文字进行修改, 也可以通过点击弹出的编辑框进行富文本修改. 拖动区块能实现排序.
-				</p>
-				<p>
-					<a class="btn btn-primary btn-large" href="#">参看更多 »</a>
-				</p>
-			</div>
-			<ul class="thumbnails">
-				<li class="span4">
-					<div class="thumbnail">
-						<img alt="300x200" src="img/people.jpg" />
-						<div class="caption">
-							<h3>
-								冯诺尔曼结构
-							</h3>
-							<p>
-								也称普林斯顿结构，是一种将程序指令存储器和数据存储器合并在一起的存储器结构。程序指令存储地址和数据存储地址指向同一个存储器的不同物理位置。
-							</p>
-							<p>
-								<a class="btn btn-primary" href="#">浏览</a> <a class="btn" href="#">分享</a>
-							</p>
-						</div>
-					</div>
-				</li>
-				<li class="span4">
-					<div class="thumbnail">
-						<img alt="300x200" src="img/city.jpg" />
-						<div class="caption">
-							<h3>
-								哈佛结构
-							</h3>
-							<p>
-								哈佛结构是一种将程序指令存储和数据存储分开的存储器结构，它的主要特点是将程序和数据存储在不同的存储空间中，进行独立编址。
-							</p>
-							<p>
-								<a class="btn btn-primary" href="#">浏览</a> <a class="btn" href="#">分享</a>
-							</p>
-						</div>
-					</div>
-				</li>
-				<li class="span4">
-					<div class="thumbnail">
-						<img alt="300x200" src="img/sports.jpg" />
-						<div class="caption">
-							<h3>
-								改进型哈佛结构
-							</h3>
-							<p>
-								改进型的哈佛结构具有一条独立的地址总线和一条独立的数据总线，两条总线由程序存储器和数据存储器分时复用，使结构更紧凑。
-							</p>
-							<p>
-								<a class="btn btn-primary" href="#">浏览</a> <a class="btn" href="#">分享</a>
-							</p>
-						</div>
-					</div>
-				</li>
-			</ul>
-		</div>
-	</div>
-</div>
+   <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Project name</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="../navbar/">Default</a></li>
+            <li><a href="../navbar-static-top/">Static top</a></li>
+            <li class="active"><a href="./">Fixed top <span class="sr-only">(current)</span></a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <!-- Main component for a primary marketing message or call to action -->
+      <div class="jumbotron">
+        <h1>Navbar example</h1>
+        <p>This example is a quick exercise to illustrate how the default, static and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
+        <p>To see the difference between static and fixed top navbars, just scroll.</p>
+        <p>
+          <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">View navbar docs &raquo;</a>
+        </p>
+      </div>
+
+    </div> <!-- /container -->
+
 </body>
 </html>

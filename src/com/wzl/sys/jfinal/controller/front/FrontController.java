@@ -6,4 +6,8 @@ public class FrontController extends baseController{
 	public void index(){
 		renderJsp("index.jsp");
 	}
+	
+	private void test(){
+		renderText("private方法");;
+	}
 }
